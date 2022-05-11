@@ -1,9 +1,20 @@
+import { Provider } from "react-redux";
+import Contact from "./components/contacts/Contact";
+import Navbar from "./components/Navbar";
 import "./styles.css";
+import store from './store';
 
 export default function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Navbar />
+        <div className="container">
+          <div className="py-3">
+            <Contact />
+          </div>
+        </div>
+      </div>
+    </Provider>
   );
 }
