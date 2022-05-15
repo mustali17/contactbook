@@ -1,12 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import Contacts from "./Contacts";
 
 export default function Contact() {
-  const contacts = useSelector((state) => state.contacts);
+  const contacts = useSelector((state) => state.contact.contacts);
   console.log("con", contacts);
   return (
     <div>
-      <table class="table shadow">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+      </head>
+      <table className="table shadow">
         <thead>
           <tr>
             <th scope="col">
@@ -22,14 +29,7 @@ export default function Contact() {
         </thead>
         <tbody>
           {contacts.map((contact) => {
-            return (
-              <tr>
-                <th scope="row">1</th>
-                <td>{contact.name}</td>
-                <td>{contact.phone}</td>
-                <td>{contact.email}</td>
-              </tr>
-            );
+            return <Contacts contact={contact} key={contact.id} />;
           })}
         </tbody>
       </table>

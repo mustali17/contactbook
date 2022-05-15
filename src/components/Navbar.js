@@ -1,14 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <div>
       <nav className="navbar shadow fixed-top navbar-expand-lg navbar-light bg-light">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             Contact Book
-          </a>
+          </Link>
           <div>
-            <a className="btn btn-light ml-auto">Create Contact</a>
+            <Link to="/contacts/add" className="btn btn-primary ml-auto">
+              Create Contact
+            </Link>
           </div>
         </div>
       </nav>
